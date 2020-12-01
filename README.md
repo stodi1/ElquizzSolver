@@ -18,5 +18,7 @@ $ pip3 install -r requirements.txt
 
 The script will start and will wait for you to click on the return key (Enter key) when you get the question on the device screen.
 
+[![Watch the video](https://img.youtube.com/vi/P5lvptunPZc/maxresdefault.jpg)](https://youtu.be/P5lvptunPZc)
+
 ## Disclaimer
 The project is intended to be used for experimental use only, the devloper is not responsible for any inappropriate use.
