@@ -49,6 +49,7 @@ def getPageContent(question):
     return r.text[r.text.index("<div id=\"search\">"):]
 
 def sendToFacebook(recipient, message):
+    # Put your page access token bellow
     params = {
         "access_token": "YOUR_PAGE_ACCESS_TOKEN"
     }
@@ -68,7 +69,7 @@ def sendToFacebook(recipient, message):
         print("Error while trying to send message to {}".format(recipient))
 
 def sendMessage(message):
-    # facebook id for the users you want to send the answer to
+    # Facebook id for the users you want to send the answer to
     recipients = []
     for recipient in recipients:
         thread = Thread(target=sendToFacebook, args=(recipient,message,))
@@ -128,3 +129,5 @@ if __name__ == "__main__":
         reponse, index = getAnswer(question, options)
         sendMessage(reponse)
         print("\033[31m%s\033[0m"%reponse)
+        if index > 0:
+            subprocess.run([adbPath, "shell", "input", "tap", "500", "{}".format(760+index*200)])
